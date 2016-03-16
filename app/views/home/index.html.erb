@@ -1,0 +1,11 @@
+<h1>Upload sample video </h1>
+<%if(notice)%>
+  <%=notice%>
+<% end %>
+<%= form_tag('/home/create', multipart: true, authenticity_token: true) do %>
+  <%= file_field_tag 'video' %><br />
+  <%= submit_tag("Upload") %>
+<% end %>
+<div>
+  <%= @resposne if !@resposne.blank? %>
+</div>
